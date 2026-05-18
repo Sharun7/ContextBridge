@@ -8,7 +8,9 @@ python-multipart==0.0.6
 
 # AI & LLM
 google-generativeai==0.3.2
-langchain==0.1.4
+langchain==0.1.16
+langchain-community==0.0.32
+langsmith==0.1.17
 langchain-google-genai==0.0.6
 
 # Vector Store & Embeddings
