@@ -1,12 +1,20 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:8000/api';
+// Determine API base URL based on environment
+const API_BASE_URL = process.env.REACT_APP_API_URL 
+  ? `${process.env.REACT_APP_API_URL}/api`
+  : (process.env.NODE_ENV === 'production'
+    ? 'https://contextbridge-backend.onrender.com/api'
+    : 'http://localhost:8000/api');
+
+console.log('API Base URL:', API_BASE_URL);
 
 const api = axios.create({
   baseURL: API_BASE_URL,
   headers: {
     'Content-Type': 'application/json',
   },
+  timeout: 30000, // 30 second timeout for production
 });
 
 export const apiService = {

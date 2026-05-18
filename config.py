@@ -49,17 +49,21 @@ class Settings(BaseSettings):
     
     # API Configuration
     API_HOST: str = "0.0.0.0"
-    API_PORT: int = 8000
-    API_RELOAD: bool = True
+    API_PORT: int = int(os.getenv("PORT", "8000"))
+    API_RELOAD: bool = os.getenv("ENVIRONMENT", "development") != "production"
     API_TITLE: str = "ContextBridge API"
     API_VERSION: str = "1.0.0"
     API_DESCRIPTION: str = "AI-Powered Institutional Memory Agent for Enterprises"
+    
+    # Environment
+    ENVIRONMENT: str = os.getenv("ENVIRONMENT", "development")
+    DEBUG: bool = os.getenv("DEBUG", "False").lower() == "true"
     
     # Logging
     LOG_LEVEL: str = "INFO"
     
     # CORS Configuration
-    CORS_ORIGINS: list = ["http://localhost:3000", "http://localhost:3001"]
+    CORS_ORIGINS: list = os.getenv("CORS_ORIGINS", "http://localhost:3000,http://localhost:3001").split(",")
     
     # Knowledge Extraction Settings
     EXTRACTION_BATCH_SIZE: int = 10
