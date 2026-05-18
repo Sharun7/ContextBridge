@@ -1,0 +1,43 @@
+# ContextBridge - AI-Powered Institutional Memory Agent
+# Python Dependencies
+
+# Web Framework
+fastapi==0.109.0
+uvicorn[standard]==0.27.0
+python-multipart==0.0.6
+
+# AI & LLM
+google-generativeai==0.3.2
+langchain==0.1.4
+langchain-google-genai==0.0.6
+
+# Vector Store & Embeddings
+chromadb==0.4.22
+sentence-transformers==2.3.1
+
+# Database
+sqlalchemy==2.0.25
+
+# Graph Processing
+networkx==3.2.1
+
+# Configuration & Environment
+python-dotenv==1.0.0
+
+# Data Validation
+pydantic==2.5.3
+pydantic-settings==2.1.0
+
+# HTTP Client
+httpx==0.26.0
+requests==2.31.0
+
+# Enterprise Integrations
+slack-sdk==3.26.2
+jira==3.6.0
+google-api-python-client==2.116.0
+google-auth-httplib2==0.2.0
+google-auth-oauthlib==1.2.0
+
+# Utilities
+rich==13.7.0

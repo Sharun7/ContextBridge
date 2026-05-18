@@ -1,0 +1,332 @@
+[
+  {
+    "id": "sarah.chen",
+    "name": "Sarah Chen",
+    "role": "Senior Backend Engineer",
+    "department": "Engineering",
+    "email": "sarah.chen@novatech.com",
+    "expertise_areas": [
+      "PostgreSQL",
+      "Database Architecture",
+      "Python",
+      "Microservices"
+    ],
+    "past_projects": [
+      "PostgreSQL Migration Attempt (2023) - Lead",
+      "Microservices Refactoring (2022)",
+      "Payment Gateway Integration (2023)"
+    ]
+  },
+  {
+    "id": "james.wilson",
+    "name": "James Wilson",
+    "role": "Principal Architect",
+    "department": "Engineering",
+    "email": "james.wilson@novatech.com",
+    "expertise_areas": [
+      "System Architecture",
+      "React",
+      "Frontend",
+      "Technical Strategy"
+    ],
+    "past_projects": [
+      "React vs Vue Evaluation (2022) - Lead",
+      "Frontend Architecture Redesign (2022)",
+      "APAC Expansion Technical Planning (2024)"
+    ]
+  },
+  {
+    "id": "maria.garcia",
+    "name": "Maria Garcia",
+    "role": "DevOps Lead",
+    "department": "Engineering",
+    "email": "maria.garcia@novatech.com",
+    "expertise_areas": [
+      "Kubernetes",
+      "CI/CD",
+      "Database Operations",
+      "AWS"
+    ],
+    "past_projects": [
+      "PostgreSQL Migration Attempt (2023) - Infrastructure",
+      "Microservices Deployment Pipeline (2022)",
+      "Database Performance Optimization (2023)"
+    ]
+  },
+  {
+    "id": "alex.kumar",
+    "name": "Alex Kumar",
+    "role": "Staff Engineer",
+    "department": "Engineering",
+    "email": "alex.kumar@novatech.com",
+    "expertise_areas": [
+      "Payment Systems",
+      "API Design",
+      "Node.js",
+      "Stripe Integration"
+    ],
+    "past_projects": [
+      "Stripe vs Braintree Evaluation (2023) - Lead",
+      "Payment Gateway Migration (2023)",
+      "API Gateway Implementation (2022)"
+    ]
+  },
+  {
+    "id": "emily.rodriguez",
+    "name": "Emily Rodriguez",
+    "role": "Product Manager",
+    "department": "Product",
+    "email": "emily.rodriguez@novatech.com",
+    "expertise_areas": [
+      "Product Strategy",
+      "Market Expansion",
+      "Compliance",
+      "User Research"
+    ],
+    "past_projects": [
+      "APAC Market Expansion (2024) - Lead",
+      "Payment Features Roadmap (2023)",
+      "Mobile App Launch (2022)"
+    ]
+  },
+  {
+    "id": "david.thompson",
+    "name": "David Thompson",
+    "role": "Engineering Manager",
+    "department": "Engineering",
+    "email": "david.thompson@novatech.com",
+    "expertise_areas": [
+      "Team Leadership",
+      "Microservices",
+      "Java",
+      "System Design"
+    ],
+    "past_projects": [
+      "Microservices Refactoring (2022) - Lead",
+      "Team Scaling Initiative (2023)",
+      "Technical Debt Reduction (2024)"
+    ]
+  },
+  {
+    "id": "lisa.park",
+    "name": "Lisa Park",
+    "role": "Senior Frontend Engineer",
+    "department": "Engineering",
+    "email": "lisa.park@novatech.com",
+    "expertise_areas": [
+      "React",
+      "TypeScript",
+      "UI/UX",
+      "Performance Optimization"
+    ],
+    "past_projects": [
+      "React Migration (2022)",
+      "Design System Implementation (2023)",
+      "Mobile Responsive Redesign (2024)"
+    ]
+  },
+  {
+    "id": "michael.oconnor",
+    "name": "Michael O'Connor",
+    "role": "Security Engineer",
+    "department": "Security",
+    "email": "michael.oconnor@novatech.com",
+    "expertise_areas": [
+      "Application Security",
+      "Compliance",
+      "GDPR",
+      "Penetration Testing"
+    ],
+    "past_projects": [
+      "APAC Compliance Assessment (2024)",
+      "Security Audit (2023)",
+      "SOC 2 Certification (2022)"
+    ]
+  },
+  {
+    "id": "priya.patel",
+    "name": "Priya Patel",
+    "role": "Data Engineer",
+    "department": "Engineering",
+    "email": "priya.patel@novatech.com",
+    "expertise_areas": [
+      "Data Pipelines",
+      "PostgreSQL",
+      "ETL",
+      "Analytics"
+    ],
+    "past_projects": [
+      "Data Warehouse Migration (2023)",
+      "Analytics Platform (2022)",
+      "Real-time Data Processing (2024)"
+    ]
+  },
+  {
+    "id": "robert.zhang",
+    "name": "Robert Zhang",
+    "role": "QA Lead",
+    "department": "Engineering",
+    "email": "robert.zhang@novatech.com",
+    "expertise_areas": [
+      "Test Automation",
+      "Quality Assurance",
+      "CI/CD",
+      "Performance Testing"
+    ],
+    "past_projects": [
+      "Automated Testing Framework (2023)",
+      "Load Testing Infrastructure (2022)",
+      "Quality Metrics Dashboard (2024)"
+    ]
+  },
+  {
+    "id": "jennifer.lee",
+    "name": "Jennifer Lee",
+    "role": "Backend Engineer",
+    "department": "Engineering",
+    "email": "jennifer.lee@novatech.com",
+    "expertise_areas": [
+      "Software Development",
+      "Agile",
+      "Collaboration"
+    ],
+    "past_projects": [
+      "Various projects (2022-2024)"
+    ]
+  },
+  {
+    "id": "carlos.mendez",
+    "name": "Carlos Mendez",
+    "role": "Frontend Engineer",
+    "department": "Engineering",
+    "email": "carlos.mendez@novatech.com",
+    "expertise_areas": [
+      "Software Development",
+      "Agile",
+      "Collaboration"
+    ],
+    "past_projects": [
+      "Various projects (2022-2024)"
+    ]
+  },
+  {
+    "id": "amanda.white",
+    "name": "Amanda White",
+    "role": "Product Designer",
+    "department": "Design",
+    "email": "amanda.white@novatech.com",
+    "expertise_areas": [
+      "Software Development",
+      "Agile",
+      "Collaboration"
+    ],
+    "past_projects": [
+      "Various projects (2022-2024)"
+    ]
+  },
+  {
+    "id": "kevin.brown",
+    "name": "Kevin Brown",
+    "role": "Backend Engineer",
+    "department": "Engineering",
+    "email": "kevin.brown@novatech.com",
+    "expertise_areas": [
+      "Software Development",
+      "Agile",
+      "Collaboration"
+    ],
+    "past_projects": [
+      "Various projects (2022-2024)"
+    ]
+  },
+  {
+    "id": "sophia.anderson",
+    "name": "Sophia Anderson",
+    "role": "Technical Writer",
+    "department": "Engineering",
+    "email": "sophia.anderson@novatech.com",
+    "expertise_areas": [
+      "Software Development",
+      "Agile",
+      "Collaboration"
+    ],
+    "past_projects": [
+      "Various projects (2022-2024)"
+    ]
+  },
+  {
+    "id": "daniel.martinez",
+    "name": "Daniel Martinez",
+    "role": "SRE Engineer",
+    "department": "Engineering",
+    "email": "daniel.martinez@novatech.com",
+    "expertise_areas": [
+      "Software Development",
+      "Agile",
+      "Collaboration"
+    ],
+    "past_projects": [
+      "Various projects (2022-2024)"
+    ]
+  },
+  {
+    "id": "olivia.taylor",
+    "name": "Olivia Taylor",
+    "role": "Product Manager",
+    "department": "Product",
+    "email": "olivia.taylor@novatech.com",
+    "expertise_areas": [
+      "Software Development",
+      "Agile",
+      "Collaboration"
+    ],
+    "past_projects": [
+      "Various projects (2022-2024)"
+    ]
+  },
+  {
+    "id": "ryan.jackson",
+    "name": "Ryan Jackson",
+    "role": "Data Analyst",
+    "department": "Analytics",
+    "email": "ryan.jackson@novatech.com",
+    "expertise_areas": [
+      "Software Development",
+      "Agile",
+      "Collaboration"
+    ],
+    "past_projects": [
+      "Various projects (2022-2024)"
+    ]
+  },
+  {
+    "id": "natalie.kim",
+    "name": "Natalie Kim",
+    "role": "UX Researcher",
+    "department": "Design",
+    "email": "natalie.kim@novatech.com",
+    "expertise_areas": [
+      "Software Development",
+      "Agile",
+      "Collaboration"
+    ],
+    "past_projects": [
+      "Various projects (2022-2024)"
+    ]
+  },
+  {
+    "id": "thomas.nguyen",
+    "name": "Thomas Nguyen",
+    "role": "DevOps Engineer",
+    "department": "Engineering",
+    "email": "thomas.nguyen@novatech.com",
+    "expertise_areas": [
+      "Software Development",
+      "Agile",
+      "Collaboration"
+    ],
+    "past_projects": [
+      "Various projects (2022-2024)"
+    ]
+  }
+]

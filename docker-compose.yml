@@ -1,0 +1,63 @@
+version: '3.8'
+
+services:
+  # Backend API Service
+  contextbridge-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: contextbridge-api
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    environment:
+      - DEMO_MODE=true
+      - CHROMA_PERSIST_DIR=/app/chroma_db
+    volumes:
+      # Persist vector store data
+      - ./chroma_db:/app/chroma_db
+      # Persist logs
+      - ./logs:/app/logs
+      # Mount code for hot reload in development
+      - .:/app
+    networks:
+      - contextbridge-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Frontend UI Service
+  contextbridge-ui:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: contextbridge-ui
+    ports:
+      - "3000:3000"
+    environment:
+      - REACT_APP_API_URL=http://localhost:8000
+    depends_on:
+      contextbridge-api:
+        condition: service_healthy
+    networks:
+      - contextbridge-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+networks:
+  contextbridge-network:
+    driver: bridge
+
+volumes:
+  chroma_db:
+  logs:

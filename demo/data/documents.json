@@ -1,0 +1,74 @@
+[
+  {
+    "id": "ADR-015",
+    "title": "Architecture Decision Record: Standardize on React for Frontend Development",
+    "type": "Architecture Decision Record",
+    "author": "james.wilson",
+    "date": "2022-03-20",
+    "folder": "Architecture/ADRs",
+    "content": "# ADR-015: Standardize on React for Frontend Development\n\n## Status\nAccepted\n\n## Context\nWe currently have a mix of React and Vue components across our frontend applications. This creates maintenance overhead, makes it harder to share code, and complicates hiring and onboarding.\n\n## Decision\nWe will standardize on React for all frontend development.\n\n## Rationale\n1. **TypeScript Integration**: React has superior TypeScript support with better type inference and tooling\n2. **Ecosystem**: Larger ecosystem with more third-party libraries and components\n3. **Talent Pool**: Easier to hire React developers - larger market availability\n4. **Mobile Strategy**: React Native provides a path to mobile development with shared code\n5. **Team Knowledge**: 80% of our frontend team already knows React well\n6. **Community**: Larger community means better support and more resources\n\n## Consequences\n- All new frontend projects must use React\n- Existing Vue projects will be migrated over the next 6 months\n- Training will be provided for team members who need to learn React\n- Standardized component library will be built in React\n\n## Alternatives Considered\n- **Vue**: Gentler learning curve, excellent documentation, but smaller ecosystem\n- **Angular**: Enterprise-ready but too opinionated and heavyweight for our needs\n"
+  },
+  {
+    "id": "DOC-089",
+    "title": "Post-Mortem: PostgreSQL Migration Failure (Q3 2023)",
+    "type": "Post-Mortem",
+    "author": "sarah.chen",
+    "date": "2023-09-13",
+    "folder": "Engineering/Post-Mortems",
+    "content": "# Post-Mortem: PostgreSQL Migration Failure\n\n## Incident Summary\nOn September 10, 2023, our attempt to migrate from MySQL to PostgreSQL resulted in a production outage lasting 45 minutes. The migration was rolled back and the project was abandoned.\n\n## Timeline\n- **July 10, 2023**: Project initiated\n- **July 15, 2023**: PostgreSQL instance set up in staging\n- **August 22, 2023**: Connection pooling issues discovered in staging\n- **September 10, 2023 16:00**: Migration deployed to production\n- **September 10, 2023 16:15**: Production outage - 500 errors across all services\n- **September 10, 2023 16:45**: Rollback completed, service restored\n\n## Root Cause\npgBouncer connection pool was configured with max_connections=100, which was insufficient for production traffic levels (should have been 500+). Under load, the connection pool was exhausted, causing cascading failures across all services.\n\n## What Went Wrong\n1. **No Load Testing**: Never tested with production-level traffic\n2. **Insufficient Monitoring**: No alerts for connection pool usage\n3. **Configuration Error**: Connection pool settings copied from development environment\n4. **Rushed Timeline**: Pressure to complete migration quickly led to skipped testing steps\n\n## What Went Right\n1. **Fast Rollback**: Rollback procedure was well-documented and executed quickly\n2. **Good Communication**: Team communicated effectively during the incident\n3. **Data Integrity**: No data loss occurred during the incident\n\n## Lessons Learned\n1. **Always load test infrastructure changes** with production-level traffic\n2. **Proper connection pool sizing** is critical for database performance\n3. **Gradual rollout** strategy should be used for major infrastructure changes\n4. **Monitoring and alerting** must be in place before any migration\n\n## Action Items\n- [ ] Implement automated load testing pipeline (ENG-1500)\n- [ ] Create connection pool monitoring and alerting (ENG-1600)\n- [ ] Document database migration best practices\n- [ ] Require load testing sign-off for all infrastructure changes\n\n## Cost\n- 3 months of engineering time wasted\n- 45 minutes of production downtime\n- Estimated cost: $500,000\n\n## Recommendation\nDo not attempt PostgreSQL migration again without:\n1. Comprehensive load testing\n2. Proper connection pool configuration\n3. Gradual rollout strategy\n4. Dedicated DBA review\n\n**Author**: Sarah Chen  \n**Date**: September 13, 2023  \n**Reviewed by**: David Thompson, Maria Garcia\n"
+  },
+  {
+    "id": "DOC-112",
+    "title": "APAC Market Expansion - Technical Requirements",
+    "type": "Technical Requirements",
+    "author": "emily.rodriguez",
+    "date": "2024-03-10",
+    "folder": "Product/Market Expansion",
+    "content": "# APAC Market Expansion - Technical Requirements\n\n## Overview\nTechnical requirements for expanding NovaTech Solutions to APAC markets (Singapore, Japan, Australia).\n\n## Compliance Requirements\n\n### Singapore (PDPA - Personal Data Protection Act)\n- Data residency: Customer data must be stored in Singapore\n- Consent management: Explicit consent required for data collection\n- Data breach notification: Within 72 hours\n\n### Japan (APPI - Act on Protection of Personal Information)\n- Data localization: Sensitive data must remain in Japan\n- Cross-border transfer restrictions\n- Anonymization requirements\n\n### Australia (Privacy Act)\n- Australian Privacy Principles (APPs) compliance\n- Data breach notification scheme\n- Cross-border disclosure rules\n\n## Technical Architecture\n\n### Infrastructure\n- Separate database instances per country\n- Regional data centers (AWS ap-southeast-1, ap-northeast-1, ap-southeast-2)\n- Data encryption at rest and in transit\n- Audit logging for all data access\n\n### Development Effort\n- Estimated timeline: 6 months\n- Team size: 8 engineers + 2 legal consultants\n- Cost estimate: $1.2M\n\n## Current Status\n**PAUSED** as of April 5, 2024\n\nCompliance requirements are more complex than initially assessed. We need:\n1. Specialized legal expertise in APAC data protection laws\n2. Dedicated compliance engineering team\n3. Regional infrastructure setup and management\n4. Ongoing compliance monitoring and auditing\n\n## Recommendation\nRevisit in 2025 after hiring specialized talent and building compliance infrastructure.\n\n**Author**: Emily Rodriguez  \n**Contributors**: James Wilson, Michael O'Connor  \n**Date**: March 10, 2024\n"
+  },
+  {
+    "id": "DOC-095",
+    "title": "Payment Gateway Evaluation: Stripe vs Braintree",
+    "type": "Vendor Evaluation",
+    "author": "alex.kumar",
+    "date": "2023-04-20",
+    "folder": "Engineering/Vendor Evaluations",
+    "content": "# Payment Gateway Evaluation: Stripe vs Braintree\n\n## Executive Summary\nAfter comprehensive evaluation, **Stripe** is recommended as our payment gateway provider.\n\n## Evaluation Criteria\n\n### API Quality\n- **Stripe**: \u2b50\u2b50\u2b50\u2b50\u2b50 Excellent RESTful API, intuitive design, comprehensive SDKs\n- **Braintree**: \u2b50\u2b50\u2b50\u2b50 Good API but less intuitive\n\n### Documentation\n- **Stripe**: \u2b50\u2b50\u2b50\u2b50\u2b50 Industry-leading documentation with interactive examples\n- **Braintree**: \u2b50\u2b50\u2b50 Adequate but less comprehensive\n\n### Payment Methods\n- **Stripe**: Credit cards, ACH, Apple Pay, Google Pay, 135+ currencies\n- **Braintree**: Credit cards, PayPal, Venmo, Apple Pay\n\n### Pricing\n- **Stripe**: 2.9% + $0.30 per transaction\n- **Braintree**: 2.9% + $0.30 per transaction (similar)\n\n### Fraud Detection\n- **Stripe**: Radar - ML-powered fraud detection, excellent\n- **Braintree**: Basic fraud tools, less sophisticated\n\n### Webhooks\n- **Stripe**: Robust webhook system with retry logic and monitoring\n- **Braintree**: Basic webhooks\n\n### Developer Experience\n- **Stripe**: \u2b50\u2b50\u2b50\u2b50\u2b50 Excellent DX, great testing tools\n- **Braintree**: \u2b50\u2b50\u2b50 Good but not as polished\n\n## Decision\n**Stripe** is the clear winner.\n\n## Implementation\nIntegration completed in 3 weeks. No issues in production. Processing $500K+ monthly.\n\n**Author**: Alex Kumar  \n**Date**: April 20, 2023  \n**Status**: Implemented\n"
+  },
+  {
+    "id": "DOC-001",
+    "title": "Engineering Team Expertise Directory",
+    "type": "Team Directory",
+    "author": "david.thompson",
+    "date": "2024-01-15",
+    "folder": "Engineering/Team",
+    "content": "# Engineering Team Expertise Directory\n\n## Database & Infrastructure\n- **Sarah Chen**: PostgreSQL, MySQL, Database Architecture, Python\n- **Maria Garcia**: Kubernetes, CI/CD, Database Operations, AWS\n- **Priya Patel**: Data Pipelines, PostgreSQL, ETL, Analytics\n\n## Frontend\n- **James Wilson**: React, System Architecture, Technical Strategy\n- **Lisa Park**: React, TypeScript, UI/UX, Performance\n- **Carlos Mendez**: Frontend Development, Vue, React\n\n## Backend & APIs\n- **Alex Kumar**: Payment Systems, API Design, Node.js, Stripe\n- **Kevin Brown**: Backend Development, Java, Microservices\n- **Jennifer Lee**: Backend Development, Python, APIs\n\n## DevOps & Security\n- **Maria Garcia**: Kubernetes, CI/CD, Infrastructure\n- **Michael O'Connor**: Security, Compliance, GDPR, Penetration Testing\n- **Daniel Martinez**: SRE, Monitoring, Observability\n\n## Quality & Testing\n- **Robert Zhang**: Test Automation, QA, Performance Testing\n- **Ryan Jackson**: Data Analysis, Testing, Metrics\n\n## Leadership\n- **David Thompson**: Engineering Management, Microservices, System Design\n- **Emily Rodriguez**: Product Management, Market Expansion, Strategy\n\nLast Updated: January 15, 2024\n"
+  },
+  {
+    "id": "DOC-120",
+    "title": "Microservices Architecture Guide",
+    "type": "Technical Guide",
+    "author": "david.thompson",
+    "date": "2022-08-20",
+    "folder": "Engineering/Architecture",
+    "content": "Guide to our microservices architecture including service boundaries, communication patterns, and deployment strategies."
+  },
+  {
+    "id": "DOC-130",
+    "title": "Database Best Practices",
+    "type": "Best Practices",
+    "author": "sarah.chen",
+    "date": "2023-10-01",
+    "folder": "Engineering/Best Practices",
+    "content": "Best practices for database operations including connection pooling, indexing, query optimization, and migration strategies. Lessons learned from the PostgreSQL migration failure."
+  },
+  {
+    "id": "DOC-140",
+    "title": "Frontend Development Standards",
+    "type": "Standards",
+    "author": "james.wilson",
+    "date": "2022-04-01",
+    "folder": "Engineering/Standards",
+    "content": "Standards for React development including component structure, state management, testing, and code style."
+  }
+]

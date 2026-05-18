@@ -1,0 +1,242 @@
+[
+  {
+    "id": "3bd35caf-3761-4f7a-849b-b529a37e997c",
+    "channel": "#engineering",
+    "user": "sarah.chen",
+    "username": "Sarah Chen",
+    "timestamp": "2023-07-15T10:30:00Z",
+    "text": "Hey team, I'm starting the PostgreSQL migration project this week. We're moving from MySQL to PostgreSQL for better JSON support and performance. Will keep everyone updated!"
+  },
+  {
+    "id": "4d5f5929-7f3a-40e0-a504-071ec4b69b50",
+    "channel": "#engineering",
+    "user": "maria.garcia",
+    "username": "Maria Garcia",
+    "timestamp": "2023-07-15T10:35:00Z",
+    "text": "@sarah.chen Sounds good! Make sure to test connection pooling thoroughly. We had issues with that in the past."
+  },
+  {
+    "id": "e83273c4-9f63-47a1-b162-83bf8acff30b",
+    "channel": "#engineering",
+    "user": "sarah.chen",
+    "username": "Sarah Chen",
+    "timestamp": "2023-08-22T14:20:00Z",
+    "text": "Update on PostgreSQL migration: We're seeing some weird connection pooling behavior in staging. Connections aren't being released properly. Investigating..."
+  },
+  {
+    "id": "2286a4dd-7380-4b40-b242-bddc7947765a",
+    "channel": "#engineering",
+    "user": "david.thompson",
+    "username": "David Thompson",
+    "timestamp": "2023-08-22T14:45:00Z",
+    "text": "@sarah.chen How critical is this? Do we need to pause the migration?"
+  },
+  {
+    "id": "0770d958-c089-4498-ac4e-0f5fe344a5ed",
+    "channel": "#engineering",
+    "user": "sarah.chen",
+    "username": "Sarah Chen",
+    "timestamp": "2023-09-10T16:00:00Z",
+    "text": "Bad news team. The PostgreSQL migration is failing. Connection pool exhaustion is causing cascading failures. We're seeing 500 errors in production. Rolling back now."
+  },
+  {
+    "id": "ff4adc79-d389-49ac-bf18-d0bfcf299efa",
+    "channel": "#incidents",
+    "user": "sarah.chen",
+    "username": "Sarah Chen",
+    "timestamp": "2023-09-10T16:15:00Z",
+    "text": "\ud83d\udea8 INCIDENT: PostgreSQL migration caused production outage. Root cause: pgBouncer connection pooling misconfiguration. Max connections set too low (100) for our traffic. Should have been 500+. Rollback complete. Service restored."
+  },
+  {
+    "id": "61ded0ef-5004-41aa-80ae-2946b20e7bd7",
+    "channel": "#engineering",
+    "user": "maria.garcia",
+    "username": "Maria Garcia",
+    "timestamp": "2023-09-11T09:00:00Z",
+    "text": "Post-mortem scheduled for tomorrow. Key lesson: always load test with production-level traffic before migrating databases. The connection pool settings were never stress tested."
+  },
+  {
+    "id": "7a8396c6-7fd4-4b24-9e9f-ecaddd5854e7",
+    "channel": "#engineering",
+    "user": "sarah.chen",
+    "username": "Sarah Chen",
+    "timestamp": "2023-09-12T11:30:00Z",
+    "text": "I've documented everything in the post-mortem doc. TL;DR: Don't attempt PostgreSQL migration without proper connection pool configuration and load testing. Cost us 3 months of work."
+  },
+  {
+    "id": "8dbc31fa-c88c-4cc2-8b7c-d0cf5ddcb3c1",
+    "channel": "#architecture",
+    "user": "james.wilson",
+    "username": "James Wilson",
+    "timestamp": "2022-03-10T10:00:00Z",
+    "text": "Opening discussion: Should we standardize on React or Vue for our frontend? We currently have a mix and it's causing maintenance issues."
+  },
+  {
+    "id": "5621ed5c-30b0-4288-ad61-cdff63f51a44",
+    "channel": "#architecture",
+    "user": "lisa.park",
+    "username": "Lisa Park",
+    "timestamp": "2022-03-10T10:15:00Z",
+    "text": "I vote React. Larger ecosystem, better TypeScript support, and more engineers in the market know it. Easier to hire."
+  },
+  {
+    "id": "2bbeff01-447f-4ae4-8e6f-82de95277817",
+    "channel": "#architecture",
+    "user": "carlos.mendez",
+    "username": "Carlos Mendez",
+    "timestamp": "2022-03-10T10:20:00Z",
+    "text": "Vue has a gentler learning curve though. And the documentation is excellent."
+  },
+  {
+    "id": "28866bb8-ed13-4400-820b-3d5331dd781e",
+    "channel": "#architecture",
+    "user": "james.wilson",
+    "username": "James Wilson",
+    "timestamp": "2022-03-15T14:30:00Z",
+    "text": "After evaluating both, here's my recommendation: React. Reasons: 1) Better TypeScript integration 2) Larger talent pool 3) More third-party libraries 4) Better mobile story with React Native 5) Our team already knows it better"
+  },
+  {
+    "id": "a02d7a3c-0c3d-4622-91c2-bd97034dd10a",
+    "channel": "#architecture",
+    "user": "david.thompson",
+    "username": "David Thompson",
+    "timestamp": "2022-03-15T15:00:00Z",
+    "text": "Agreed. Let's go with React. I'll create an ADR documenting this decision."
+  },
+  {
+    "id": "cbb9215e-278c-4964-a07b-bd59ea2915df",
+    "channel": "#architecture",
+    "user": "james.wilson",
+    "username": "James Wilson",
+    "timestamp": "2022-03-20T09:00:00Z",
+    "text": "ADR-015 published: 'Standardize on React for Frontend Development'. All new projects must use React. Vue projects will be migrated over the next 6 months."
+  },
+  {
+    "id": "4ea6e602-41cf-4dcd-9859-46d8b26c7763",
+    "channel": "#product",
+    "user": "emily.rodriguez",
+    "username": "Emily Rodriguez",
+    "timestamp": "2024-01-15T10:00:00Z",
+    "text": "Exciting news! We're planning to expand to APAC markets (Singapore, Japan, Australia) in Q2 2024. This is a huge opportunity for growth."
+  },
+  {
+    "id": "a1ee0f91-bb5e-4aa5-b280-61b4b34e82a8",
+    "channel": "#product",
+    "user": "michael.oconnor",
+    "username": "Michael O'Connor",
+    "timestamp": "2024-01-15T10:30:00Z",
+    "text": "@emily.rodriguez We need to review GDPR, PDPA (Singapore), and APPI (Japan) compliance requirements. This is complex."
+  },
+  {
+    "id": "c0204a5b-58a9-494e-b059-714917045c2c",
+    "channel": "#product",
+    "user": "emily.rodriguez",
+    "username": "Emily Rodriguez",
+    "timestamp": "2024-02-20T14:00:00Z",
+    "text": "Update: APAC expansion is more complex than expected. Data residency requirements mean we need infrastructure in each country. Legal review ongoing."
+  },
+  {
+    "id": "d68d7a30-53dc-44e1-a9c0-b089548b80fa",
+    "channel": "#product",
+    "user": "james.wilson",
+    "username": "James Wilson",
+    "timestamp": "2024-03-10T11:00:00Z",
+    "text": "Technical requirements for APAC: separate database instances per region, data encryption at rest, audit logging for all data access. This is a 6-month project minimum."
+  },
+  {
+    "id": "ef8cbcce-56ac-4ab8-9034-00ef977af5c1",
+    "channel": "#product",
+    "user": "emily.rodriguez",
+    "username": "Emily Rodriguez",
+    "timestamp": "2024-04-05T16:00:00Z",
+    "text": "Difficult decision: We're pausing APAC expansion. Compliance requirements are too complex for our current resources. We need to hire specialized legal and engineering talent first. Revisiting in 2025."
+  },
+  {
+    "id": "9a14e80c-737c-4b82-af9d-184a35e0db00",
+    "channel": "#engineering",
+    "user": "david.thompson",
+    "username": "David Thompson",
+    "timestamp": "2022-05-01T09:00:00Z",
+    "text": "Starting the microservices refactoring project. We're breaking the monolith into: Auth Service, User Service, Payment Service, Notification Service. Timeline: 4 months."
+  },
+  {
+    "id": "301552e0-2bef-4f93-896b-d1badb34219c",
+    "channel": "#engineering",
+    "user": "sarah.chen",
+    "username": "Sarah Chen",
+    "timestamp": "2022-05-01T09:30:00Z",
+    "text": "I'll take the Payment Service. This will integrate with our Stripe setup."
+  },
+  {
+    "id": "e2361904-7cbb-4d81-a841-34110cea2c70",
+    "channel": "#engineering",
+    "user": "david.thompson",
+    "username": "David Thompson",
+    "timestamp": "2022-08-15T14:00:00Z",
+    "text": "Microservices migration complete! All services deployed to production. Performance improved by 40%, deployment time reduced from 30min to 5min per service. This was a huge success."
+  },
+  {
+    "id": "0decbe8b-df7b-4f4a-87ff-244b8f0875f2",
+    "channel": "#engineering",
+    "user": "maria.garcia",
+    "username": "Maria Garcia",
+    "timestamp": "2022-08-15T14:30:00Z",
+    "text": "Great work team! The Kubernetes setup is running smoothly. Auto-scaling is working perfectly."
+  },
+  {
+    "id": "b62e072e-fb11-40a9-83cf-786177956202",
+    "channel": "#engineering",
+    "user": "alex.kumar",
+    "username": "Alex Kumar",
+    "timestamp": "2023-04-10T10:00:00Z",
+    "text": "We need to choose a payment gateway: Stripe vs Braintree. I'm doing a technical evaluation this week."
+  },
+  {
+    "id": "22092a8a-10c4-4f9a-9006-c1b19fe3fa63",
+    "channel": "#engineering",
+    "user": "alex.kumar",
+    "username": "Alex Kumar",
+    "timestamp": "2023-04-20T15:00:00Z",
+    "text": "Evaluation complete. Stripe wins. Better API, superior documentation, more payment methods, excellent webhook system, and better fraud detection. Braintree is good but Stripe is better for our use case."
+  },
+  {
+    "id": "46ff7744-0c02-450e-963c-dafb31259b4a",
+    "channel": "#engineering",
+    "user": "sarah.chen",
+    "username": "Sarah Chen",
+    "timestamp": "2023-04-20T15:15:00Z",
+    "text": "@alex.kumar Agreed. Stripe's API is much cleaner. Integration will be easier."
+  },
+  {
+    "id": "fd6f3f32-50c5-463b-b917-c8a49ea6077e",
+    "channel": "#engineering",
+    "user": "alex.kumar",
+    "username": "Alex Kumar",
+    "timestamp": "2023-05-01T09:00:00Z",
+    "text": "Stripe integration complete and deployed to production. Processing payments smoothly. No issues so far."
+  },
+  {
+    "id": "2111b2cd-54d7-46de-be06-98a71944f533",
+    "channel": "#engineering",
+    "user": "priya.patel",
+    "username": "Priya Patel",
+    "timestamp": "2023-11-10T10:00:00Z",
+    "text": "Reminder: Always document your architectural decisions. Future you (and your teammates) will thank you."
+  },
+  {
+    "id": "391aff4a-6ff5-42d8-bf98-479c0c892da8",
+    "channel": "#architecture",
+    "user": "james.wilson",
+    "username": "James Wilson",
+    "timestamp": "2024-01-05T11:00:00Z",
+    "text": "New year, new projects! Let's make sure we learn from past mistakes. Read the post-mortems before starting similar projects."
+  },
+  {
+    "id": "c6b67139-9e13-4448-9544-4bd1172bdc6b",
+    "channel": "#engineering",
+    "user": "robert.zhang",
+    "username": "Robert Zhang",
+    "timestamp": "2024-02-15T14:00:00Z",
+    "text": "QA tip: Load testing is not optional. It's mandatory for any infrastructure change. We learned this the hard way."
+  }
+]
