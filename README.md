@@ -63,10 +63,8 @@ DEMO_MODE=false
 # 4. Start the server
 python main.py
 ```
-
-**See [REAL_INTEGRATION_GUIDE.md](REAL_INTEGRATION_GUIDE.md) for detailed setup instructions.**
-
 ---
+
 
 ## 🔌 Enterprise Integrations
 
